@@ -1,0 +1,133 @@
+
+
+<form>
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" required><br><br>
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required><br><br>
+<button type="submit">Login </button>
+</form>
+<form> 
+<label for="email">email:</label>
+<input type="email" id="email" name="email" required><br><br>
+</form>
+<p>choice your role</p>
+<input type="radio" name="role" id="student">
+<label for="student">student</label>
+<input type="radio" id="teacher" name="role" id="teacher">
+<label for="teacher">teacher</label>
+
+<p>please select your interest</p>
+<input type="checkbox"id="html" name="interest" value="html">
+<label for="html">HTML</label><br>
+<input type="checkbox" id="css" name="interest" value="css">
+<label for="css">CSS</label><br>
+<input type="checkbox" id="js" name="interest" value="js">
+<label for="js">JavaScript</label><br>
+
+
+<label for="country">country</label>
+<select id="country" name="country">
+    <option value="usa">USA</option>
+    <option value="canada">Canada</option>
+    <option value="uk">UK</option>
+    <option value="australia">Australia</option>
+</select>
+
+<label for="Message">Message</label><br>
+<textarea id="Message" name="Message" rows="4" cols="50"></textarea>
+
+<input type="text" id="username" required minlength="3" maxlength="10">
+<input type="email" name="email" required>
+ <form id="loginform">
+    <input type="text" id="username" name="username" required>
+    <button type="submit">Submit</button>
+
+ </form>
+  <script>
+    document.getElementById("loginform").addEventListener("submit", function(event) {
+      event.preventDefault();
+     alert("Form submitted");
+    });
+  </script>
+
+  <textarea id="bio" maxlength="100"></textarea>
+  <p id="count">0/100 </p>
+   <script>
+    const bio = document.getElementById("bio");
+    const count = document.getElementById("count");
+
+    bio.addEventListener("input", function() {
+        count.textContent = `${bio.value.length}/100`;
+    });
+
+    <form id="myform">
+        <input type="text" id="username" required minlength="3" maxlength="10">
+        <input type="email" name="email" required>
+        <button type="submit">Submit</button>
+    </form> 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $("#myform").submit(function(event){
+            event.preventDefault();
+            alert("form submitted with jQuery");
+        });
+
+    </script>
+    <input type="password" id="pwd">
+    <button type="button" id="togglePwd">Show/Hide Password</button>
+
+    <script>
+        $("#togglePwd").click(function(){
+          let pwd = $("#pwd");
+          pwd.attr("type", pwd.attr("type") === "password" ? "text" : "password");
+        });
+
+    </script>
+
+    <textarea id="bio" maxlength="100"></textarea>
+    <p id="count">0/100</p>
+     <script>
+        $("#bio").on("input", function() {
+            let length = $(this).val().length;
+            $("#count").text(length + "/100");
+        });
+     </script>
+     
+     <form id="login">
+        <input type="text" id="user" placeholder="username"><br>
+        <input type="password" id="pwd" placeholder="password"><br>
+        <button type="submit">Login</button>
+    
+     </form>
+     <script>
+        $("#login").submit(function(event) {
+            e.preventDefault();
+            if($("#user").val() === "" || $("#pwd").val() === "") {
+                alert("Please fill in all fields");
+            } else {
+                alert("Login form submitted");
+            }
+        });
+     </script>
+
+     <style>
+        .error {border: 2px solid red;}
+     </style>
+
+     <form id="formcheck">
+        <input type="text" id="name" placeholder="name">
+        <button type="submit">Submit</button>
+     </form>
+        <script>
+            $("#formcheck").submit(function(event) {
+                event.preventDefault();
+                if($("#name").val() === "") {
+                    $("#name").addClass("error");
+                    alert("Name is required");
+                } else {
+                    $("#name").removeClass("error");
+                    alert("Form submitted");
+                }
+            });
+        </script>
